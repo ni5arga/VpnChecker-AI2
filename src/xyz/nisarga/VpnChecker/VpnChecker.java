@@ -21,8 +21,12 @@ public class VpnChecker extends AndroidNonvisibleComponent {
         super(container.$form());
     }
 
-    @SimpleFunction(description = "")
-    public boolean isUsingVPN() {
+     @SimpleFunction
+     public boolean isVpnConnection(){
+     return Settings.Secure.getInt(this.context.getContentResolver(), "vpn_state", 0) == 1 || isvpn1() || isvpn2();
+     }
+  
+    private boolean isvpn1() {
     String iface = "";
     try {
         for (NetworkInterface networkInterface : Collections.list(NetworkInterface.getNetworkInterfaces())) {
@@ -37,6 +41,13 @@ public class VpnChecker extends AndroidNonvisibleComponent {
     }
 
     return false;
+}
+  private boolean isvpn2() {
+    ConnectivityManager cm = (ConnectivityManager) this.context.getSystemService(Context.CONNECTIVITY_SERVICE);
+    Network activeNetwork = cm.getActiveNetwork();
+    NetworkCapabilities caps = cm.getNetworkCapabilities(activeNetwork);
+    boolean vpnInUse = caps.hasTransport(NetworkCapabilities.TRANSPORT_VPN);
+    return vpnInUse;
 }
 
 }
