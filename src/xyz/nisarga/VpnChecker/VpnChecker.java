@@ -13,7 +13,7 @@ import android.util.*;
                    description = "VpnChecker Extension",
                    category = ComponentCategory.EXTENSION,
                    nonVisible = true,
-                   iconName = "images/extension.png") // Change your extension's icon from here; can be a direct url
+                   iconName = "https://i.waifu.pics/vd4XAVZ.jpg") // Change your extension's icon from here; can be a direct url
 @SimpleObject(external = true)
 public class VpnChecker extends AndroidNonvisibleComponent {
 
