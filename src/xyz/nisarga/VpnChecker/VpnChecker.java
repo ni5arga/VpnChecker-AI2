@@ -28,7 +28,7 @@ public class VpnChecker extends AndroidNonvisibleComponent {
         for (NetworkInterface networkInterface : Collections.list(NetworkInterface.getNetworkInterfaces())) {
             if (networkInterface.isUp())
                 iface = networkInterface.getName();
-            if ( iface.contains("tun") || iface.contains("ppp") || iface.contains("warp") || iface.contains("l2tp") || iface.contains("ipsec") || iface.contains("pptp")) {
+            if ( iface.contains("tun") || iface.contains("ppp") || iface.contains("l2tp") || iface.contains("ipsec") || iface.contains("pptp")) {
                 return true;
             }
         }
