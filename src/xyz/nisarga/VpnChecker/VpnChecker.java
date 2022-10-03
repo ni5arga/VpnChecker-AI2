@@ -10,10 +10,10 @@ import android.util.*;
 
 
 @DesignerComponent(version = 1,
-                   description = "VpnChecker Extension",
+                   description = "VpnChecker is an extension to see if particular VPN interfaces on your device.",
                    category = ComponentCategory.EXTENSION,
                    nonVisible = true,
-                   iconName = "images/extension.png") // Change your extension's icon from here; can be a direct url
+                   iconName = "images/extension.png") 
 @SimpleObject(external = true)
 public class VpnChecker extends AndroidNonvisibleComponent {
 
@@ -21,7 +21,7 @@ public class VpnChecker extends AndroidNonvisibleComponent {
         super(container.$form());
     }
 
-    @SimpleFunction(description = "")
+    @SimpleFunction(description = "Boolean to see if VPN is active")
     public boolean isUsingVPN() {
     String iface = "";
     try {
