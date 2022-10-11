@@ -1,0 +1,3 @@
+The NordVPN CLI tool.
+Python 3.7.
+An input file containing NordVPN login entries in email:password format.
